@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llant'akuy 2026 - Invitación de Honor</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Acompáñanos a celebrar el tradicional Llant'akuy 2026 en honor a la Santísima Virgen. Organizado por la Familia Tapia Torres.">
+    
+    <!-- Google Fonts: Cinzel para títulos clásicos y Montserrat para el cuerpo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para íconos elegantes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Música de Fondo (Opcional) -->
+    <audio id="bg-music" loop>
+        <source src="video/musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Botón Flotante para la Música -->
+    <button id="music-toggle" class="floating-btn" aria-label="Reproducir música de fondo">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <!-- Efecto de Carga (Loader) -->
+    <div id="loader" class="loader-container">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p class="loader-text">Cargando Invitación...</p>
+        </div>
+    </div>
+
+    <!-- Héroe / Portada (Hero Section) -->
+    <header id="hero" class="hero-section">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <div class="gold-frame fade-in">
+                <p class="pre-title">Invitación de Honor</p>
+                <div class="gold-divider"></div>
+                <h1 class="main-title">LLANT'AKUY 2026</h1>
+                <p class="saint-name">EN HONOR A LA SANTÍSIMA VIRGEN</p>
+                <div class="gold-divider"></div>
+                
+                <div class="saint-image-container">
+                    <!-- Imagen de la Virgen Subida por el Usuario -->
+                    <img src="images/virgen.png" alt="Santísima Virgen" class="saint-image">
+                </div>
+                
+                <p class="date-summary">Sábado, 20 de Junio de 2026</p>
+                <p class="location-summary"><i class="fas fa-map-marker-alt"></i> Pillpinto, Paruro, Cusco</p>
+                
+                <a href="#details" class="btn btn-primary scroll-to"><i class="fas fa-chevron-down"></i> Ver Detalles</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección del Mensaje de Bienvenida -->
+    <section id="welcome-message" class="welcome-section section-padding scroll-reveal">
+        <div class="container text-center">
+            <h2 class="section-title">Trabajo Comunal, Amistad y Tradición</h2>
+            <div class="ornament"><i class="fas fa-cross"></i></div>
+            <p class="welcome-text">
+                "Con gran orgullo y fe en el corazón, nos complace invitarlos a ser partícipes del tradicional Llant'akuy 2026. Una celebración que une a nuestro pueblo en fe y trabajo comunitario. Acompáñanos a renovar nuestra devoción y a compartir momentos inolvidables de unión familiar."
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección de Cuenta Regresiva -->
+    <section id="countdown-section" class="countdown-section section-padding scroll-reveal">
+        <div class="container text-center">
+            <h3 class="countdown-title">El Llant'akuy comienza en...</h3>
+            <div id="countdown" class="countdown-container">
+                <div class="time-box">
+                    <span id="days" class="time-number">00</span>
+                    <span class="time-label">Días</span>
+                </div>
+                <div class="time-box">
+                    <span id="hours" class="time-number">00</span>
+                    <span class="time-label">Horas</span>
+                </div>
+                <div class="time-box">
+                    <span id="minutes" class="time-number">00</span>
+                    <span class="time-label">Min.</span>
+                </div>
+                <div class="time-box">
+                    <span id="seconds" class="time-number">00</span>
+                    <span class="time-label">Seg.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Detalles del Evento -->
+    <section id="details" class="details-section section-padding scroll-reveal">
+        <div class="container">
+            <h2 class="section-title text-center">Detalles del Cargo y Tradición</h2>
+            <div class="ornament text-center"><i class="fas fa-church"></i></div>
+            
+            <div class="details-grid">
+                <!-- Tarjeta 1: Día Principal -->
+                <div class="detail-card">
+                    <div class="card-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>Día Central</h3>
+                    <p class="card-highlight">Sábado, 20 de Junio de 2026</p>
+                    <p>Celebración del tradicional Llant'akuy (recolección de leña para las festividades), acompañado de comparsas tradicionales y la bendición de la Virgen.</p>
+                </div>
+
+                <!-- Tarjeta 2: Ceremonia -->
+                <div class="detail-card">
+                    <div class="card-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Entrega del Cargo</h3>
+                    <p class="card-highlight">Legitimidad y Compromiso</p>
+                    <p>Recepción formal y tradicional del cargo con orgullo, asumiendo la responsabilidad de guiar las festividades patronales con devoción.</p>
+                </div>
+
+                <!-- Tarjeta 3: Lugar -->
+                <div class="detail-card">
+                    <div class="card-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3>Ubicación</h3>
+                    <p class="card-highlight">Pillpinto, Paruro, Cusco</p>
+                    <p>La recepción e inicio del Llant'akuy se llevará a cabo en la residencia familiar de los alveros. Haz clic abajo para ver el mapa de la comunidad.</p>
+                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm"><i class="fas fa-map-marker-alt"></i> Ver Mapa</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de los Alveros (Los Anfitriones) -->
+    <section id="alveros" class="alveros-section section-padding scroll-reveal">
+        <div class="container">
+            <h2 class="section-title text-center">Nuestros Alveros</h2>
+            <p class="section-subtitle text-center">Familia Tapia Torres</p>
+            <div class="ornament text-center"><i class="fas fa-users"></i></div>
+            
+            <div class="alveros-grid">
+                <!-- Alvero Principal: Elvis Tapia Mayhua -->
+                <div class="alvero-card">
+                    <div class="alvero-photo-container">
+                        <img src="images/familia1.jpg" alt="Elvis Tapia Mayhua y Karen Torres" class="alvero-photo">
+                    </div>
+                    <h4>Alveros Mayores</h4>
+                    <p class="alvero-name">Elvis Tapia Mayhua</p>
+                    <span class="alvero-alias">"Chinka II"</span>
+                    <p class="alvero-name" style="margin-top: 10px;">Karen Torres Oviedo</p>
+                    <p class="alvero-desc">Con orgullo, fe y devoción asumen el cargo central del Llant'akuy para recibir a toda la comunidad.</p>
+                </div>
+
+                <!-- Acompañantes / Hijos -->
+                <div class="alvero-card">
+                    <div class="alvero-photo-container">
+                        <img src="images/familia2.jpg" alt="Familia Tapia Torres" class="alvero-photo">
+                    </div>
+                    <h4>Hijos de los Alveros</h4>
+                    <p class="alvero-name">Garet Tapia Torres</p>
+                    <p class="alvero-name">Lucianito Tapia Torres</p>
+                    <p class="alvero-desc">Acompañando a sus padres en esta noble labor tradicional y manteniendo vivas las costumbres de nuestro pueblo.</p>
+                </div>
+
+                <!-- Danzantes / Comparsa -->
+                <div class="alvero-card">
+                    <div class="alvero-photo-container">
+                        <img src="images/comparsa.jpg" alt="Negrillos de Huancavelica" class="alvero-photo">
+                    </div>
+                    <h4>Tradición y Fe</h4>
+                    <p class="alvero-name">Autoridades y Acompañantes</p>
+                    <p class="alvero-desc">Tradicionales danzantes y amigos que con alegría, vestimentas de gala e instrumentos acompañan la recepción del cargo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Artistas Invitados -->
+    <section id="artists" class="artists-section section-padding scroll-reveal">
+        <div class="container">
+            <h2 class="section-title text-center">Artistas Invitados</h2>
+            <p class="section-subtitle text-center">La mejor música y alegría para celebrar juntos este Llant'akuy 2026</p>
+            <div class="ornament text-center"><i class="fas fa-music"></i></div>
+            
+            <div class="artists-grid">
+                <!-- Artista 1 -->
+                <div class="artist-card">
+                    <div class="artist-icon"><i class="fas fa-microphone"></i></div>
+                    <h3>Teresita Candia</h3>
+                    <p class="artist-genre">Música Folclórica y Tradición</p>
+                </div>
+
+                <!-- Artista 2 -->
+                <div class="artist-card">
+                    <div class="artist-icon"><i class="fas fa-guitar"></i></div>
+                    <h3>La Dinastía</h3>
+                    <p class="artist-genre">Orquesta Espectáculo Súper Estelar</p>
+                </div>
+
+                <!-- Artista 3 -->
+                <div class="artist-card">
+                    <div class="artist-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Los Taquilleros de la Cumbia</h3>
+                    <p class="artist-genre">El Ritmo Tropical del Momento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Video / Programa -->
+    <section id="video-section" class="video-section section-padding scroll-reveal">
+        <div class="container text-center">
+            <h2 class="section-title">Video de la Recepción del Cargo</h2>
+            <p class="section-subtitle">Momentos de fe, aplausos y compromiso comunitario</p>
+            <div class="ornament"><i class="fas fa-video"></i></div>
+            
+            <!-- Contenedor del reproductor de video elegante -->
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <video id="promo-video" controls poster="images/virgen.png">
+                        <source src="video/YANTAQUY _ TORRES OVIEDO.mp4" type="video/mp4">
+                        Tu navegador no soporta reproducción de video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de RSVP y Confirmación -->
+    <section id="rsvp" class="rsvp-section section-padding scroll-reveal">
+        <div class="container text-center">
+            <div class="rsvp-card">
+                <h2>¿Nos acompañarás en el Llant'akuy 2026?</h2>
+                <p class="rsvp-text">Tu presencia dará mayor realce a nuestra festividad tradicional. Confirma tu asistencia haciendo clic en el botón de abajo.</p>
+                <div class="gold-divider"></div>
+                
+                <div class="rsvp-actions">
+                    <a href="https://wa.me/51958383038?text=Hola,%20confirmo%20mi%20asistencia%20al%20Llant%27akuy%202026." 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       id="btn-confirm" 
+                       class="btn btn-whatsapp btn-lg">
+                        <i class="fab fa-whatsapp"></i> Confirmar Asistencia
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página (Footer) -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p class="footer-blessing">¡Que la Virgen bendiga sus hogares y familias!</p>
+            <p class="footer-family">Familia Tapia Torres</p>
+            <div class="footer-divider"></div>
+            <p class="footer-copyright">&copy; 2026 Llant'akuy - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Archivo JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

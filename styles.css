@@ -1,0 +1,1006 @@
+/* ==========================================================================
+   DISEÑO DE INVITACIÓN PREMIUM - FIESTA PATRONAL
+   Colores: Azul Marino Profundo (#0D1B3E) y Dorado Satinado (#D4AF37)
+   ========================================================================== */
+
+/* Variables de Diseño */
+:root {
+    --primary-color: #0D2B6B; /* Azul Marino Profundo */
+    --primary-dark: #071430;  /* Azul más oscuro */
+    --accent-color: #D4AF37;   /* Dorado */
+    --accent-light: #F3E5AB;   /* Dorado suave */
+    --bg-light: #F5F8FF;       /* Azul muy claro / Perla */
+    --bg-card: #FFFFFF;
+    --text-dark: #1A2744;
+    --text-muted: #5A6A8A;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --shadow-premium: 0 15px 35px rgba(7, 20, 48, 0.10), 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* Estilos de Reinicio */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Efecto de Carga (Loader) */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader-container.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--accent-light);
+    border-top: 4px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+.loader-text {
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilos Generales */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Tipografía y Títulos */
+.section-title {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ornament {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.ornament::before,
+.ornament::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 1px;
+    background-color: var(--accent-color);
+}
+
+.ornament::before {
+    right: 130%;
+}
+
+.ornament::after {
+    left: 130%;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: var(--transition-smooth);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+}
+
+.btn-lg {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background-color: #20ba59;
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+/* Botón de Música Flotante */
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.floating-btn:hover {
+    transform: scale(1.1);
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.floating-btn.muted i::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 24px;
+    background-color: var(--accent-color);
+    transform: rotate(45deg);
+}
+
+.floating-btn.muted:hover i::after {
+    background-color: var(--primary-color);
+}
+
+/* HÉROE / PORTADA (Hero Section) */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh; /* dynamic viewport para móviles */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at top, #1A3A8F 0%, #0D1B4A 40%, #050D24 100%);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    padding: 60px 15px;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(transparent 50%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    width: 90%;
+}
+
+.gold-frame {
+    border: 3px double var(--accent-color);
+    padding: 40px 25px;
+    background-color: rgba(5, 13, 36, 0.72);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(13, 43, 107, 0.4);
+    position: relative;
+}
+
+.gold-frame::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 13px;
+    pointer-events: none;
+}
+
+.pre-title {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+    color: var(--accent-color);
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 15px 0 5px;
+    color: #FFFFFF;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.saint-name {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.gold-divider {
+    height: 1px;
+    width: 80px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    margin: 20px auto;
+}
+
+/* Contenedor de la Virgen */
+.saint-image-container {
+    width: 200px;
+    height: 200px;
+    margin: 25px auto;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.saint-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.8s ease;
+}
+
+.saint-image-container:hover .saint-image {
+    transform: scale(1.1);
+}
+
+.date-summary {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.location-summary {
+    font-size: 1rem;
+    color: var(--accent-light);
+    margin-bottom: 30px;
+}
+
+.location-summary i {
+    margin-right: 8px;
+}
+
+/* BIENVENIDA */
+.welcome-section {
+    background-color: #F0F5FF;
+    background-image: radial-gradient(rgba(13, 43, 107, 0.04) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.welcome-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--text-dark);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* CUENTA REGRESIVA */
+.countdown-section {
+    background: linear-gradient(135deg, #0D2B6B 0%, #071430 60%, #030A1A 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 30%, rgba(0, 0, 0, 0.4) 100%);
+    pointer-events: none;
+}
+
+.countdown-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 12px;
+    width: 100px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: var(--transition-smooth);
+}
+
+.time-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.time-number {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
+}
+
+.time-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 8px;
+    color: #E0E0E0;
+}
+
+/* DETALLES DEL EVENTO */
+.details-section {
+    background-color: var(--bg-light);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.detail-card {
+    background-color: var(--bg-card);
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: var(--shadow-premium);
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.detail-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(42, 5, 11, 0.12);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.card-icon {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    transition: var(--transition-smooth);
+}
+
+.detail-card:hover .card-icon {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.detail-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.card-highlight {
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.detail-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* SECCIÓN ALVEROS */
+.alveros-section {
+    background-color: #EEF3FF;
+}
+
+.alveros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.alvero-card {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    padding: 35px 25px;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    box-shadow: var(--shadow-premium);
+    transition: var(--transition-smooth);
+}
+
+.alvero-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.alvero-avatar {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(74, 14, 23, 0.05);
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin: 0 auto 20px;
+    transition: var(--transition-smooth);
+}
+
+.alvero-card:hover .alvero-avatar {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
+.alvero-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.alvero-name {
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.alvero-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* SECCIÓN VIDEO */
+.video-section {
+    background-color: var(--bg-light);
+}
+
+.video-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 3px double var(--accent-color);
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow-premium);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.video-container video,
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+}
+
+/* SECCIÓN RSVP */
+.rsvp-section {
+    background: linear-gradient(160deg, rgba(7, 20, 48, 0.97) 0%, rgba(13, 43, 107, 0.95) 50%, rgba(3, 10, 26, 0.98) 100%),
+                radial-gradient(circle, #1A3A8F 40%, #050D24 100%);
+    color: white;
+}
+
+.rsvp-card {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+}
+
+.rsvp-card h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.rsvp-text {
+    font-size: 1.05rem;
+    color: #E0E0E0;
+    margin-bottom: 30px;
+}
+
+.rsvp-actions {
+    margin-top: 30px;
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 50px 0;
+    border-top: 3px solid var(--accent-color);
+}
+
+.footer-blessing {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.footer-divider {
+    height: 1px;
+    width: 150px;
+    background-color: rgba(212, 175, 55, 0.2);
+    margin: 20px auto;
+}
+
+.footer-copyright {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
+}
+
+/* ANIMACIONES (Scroll Reveal) */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Clases de animación */
+.fade-in {
+    animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVIDAD (Media Queries) */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .hero-section {
+        padding: 40px 12px;
+        align-items: flex-start;
+        padding-top: max(50px, env(safe-area-inset-top, 20px));
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 5px;
+    }
+
+    .main-title {
+        font-size: 1.9rem;
+        letter-spacing: 1px;
+    }
+
+    .saint-name {
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+    }
+
+    .saint-image-container {
+        width: 150px;
+        height: 150px;
+        margin: 18px auto;
+    }
+
+    .countdown-container {
+        gap: 10px;
+    }
+
+    .time-box {
+        width: 72px;
+        height: 82px;
+    }
+
+    .time-number {
+        font-size: 1.7rem;
+    }
+
+    .time-label {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+
+    .detail-card {
+        padding: 28px 18px;
+    }
+
+    .rsvp-card {
+        padding: 30px 18px;
+    }
+
+    .rsvp-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .details-grid,
+    .alveros-grid,
+    .artists-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .btn-lg {
+        padding: 14px 32px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .hero-section {
+        padding: 30px 10px;
+        min-height: 100svh;
+    }
+
+    .main-title {
+        font-size: 1.6rem;
+    }
+
+    .pre-title {
+        font-size: 0.75rem;
+        letter-spacing: 3px;
+    }
+
+    .saint-image-container {
+        width: 130px;
+        height: 130px;
+    }
+
+    .gold-frame {
+        padding: 25px 12px;
+    }
+
+    .time-box {
+        width: 60px;
+        height: 70px;
+    }
+
+    .time-number {
+        font-size: 1.4rem;
+    }
+
+    .time-label {
+        font-size: 0.58rem;
+    }
+
+    .floating-btn {
+        bottom: 18px;
+        right: 18px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .btn-lg {
+        width: 100%;
+        text-align: center;
+        padding: 15px 20px;
+    }
+
+    .container {
+        width: 95%;
+    }
+}
+
+/* ==========================================================================
+   Estilos Adicionales: Fotos de los Alveros, Alias y Artistas
+   ========================================================================== */
+
+/* Estilos para las Fotos de los Alveros */
+.alvero-photo-container {
+    width: 100%;
+    height: 220px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.alvero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.alvero-card:hover .alvero-photo {
+    transform: scale(1.05);
+}
+
+.alvero-alias {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    background-color: var(--primary-dark);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    border: 1px solid var(--accent-color);
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de Artistas */
+.artists-section {
+    background-color: #F0F5FF;
+    background-image: radial-gradient(rgba(13, 43, 107, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.artist-card {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    padding: 35px 25px;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    box-shadow: var(--shadow-premium);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.artist-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+
+.artist-card:hover::before {
+    opacity: 1;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
+}
+
+.artist-icon {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: var(--transition-smooth);
+}
+
+.artist-card:hover .artist-icon {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.artist-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.artist-genre {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
